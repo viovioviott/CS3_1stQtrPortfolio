@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+    <h2 style="font-family: 'Courier';"> Q1 2nd Graded Exercise submitted by Violet Castillo of 9-Beryllium!!</h2>
+    
+    <title> mmm yum </title>
+
+    <label for = "price" style="font-family: 'Courier';"> 
+        Meal Price:
+        <input type="text" style="font-family: 'Courier New';" id="price">
+    </label>
+    <br>
+    <label for = "tip" style="font-family: 'Courier';"> 
+        Tip:
+        <input type="text" style="font-family: 'Courier New';" id="tip">
+    </label>
+    <br>
+    <label for = "charge"  style="font-family: 'Courier';"> 
+        Service Charge:
+        <input type="text" style="font-family: 'Courier New';" id="charge">
+    </label>
+    <br>
+    <br>
+
+    <p id="totalMeal" style="font-family: 'Courier';"> Total Meal: </p>
+        <br>
+        <button onclick="totalMeal()">Accept Input</button>
+    </body>
+
+
+    <script>
+        function totalMeal() {
+            let mp = document.getElementById("price").value;
+            let tip = document.getElementById("tip").value;
+            let sc = document.getElementById("charge").value;
+            
+        let totalCost = Number(mp) + Number(tip) + Number(sc / 100 * mp);
+        document.getElementById("totalMeal").innerHTML = "Total Meal: " + totalCost.toFixed(2);
+         
+        }
+    </script>
+
+</body>
+</html>
+
