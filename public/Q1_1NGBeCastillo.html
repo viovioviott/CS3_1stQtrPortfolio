@@ -13,21 +13,35 @@
     </label>
     <br>
     <label for = "numPerDay"  style="font-family: 'Courier';"> 
-        Enter the number of cookies you could eat per day:
+        Enter the number of cookies:
         <input type="text" style="font-family: 'Courier New';" id="numPerDay">
     </label>
     <br>
     <br>
 
-    <label style="font-family: 'Courier';">
-        Result:
+    <p id="result" style="font-family: 'Courier';"> Result: </p>
         <br>
-        <input type="button" style="font-family: 'Courier New';" value = "Accept Input">
-    </label>
+        <button onclick="getData()">Accept Input</button>
+    </body>
 
-</body>
+    <script>
+        function getData() {
+            let AGE = document.getElementById("age").value;
+            let maxAGE = document.getElementById("maxAge").value;
+            let perDay = document.getElementById("numPerDay").value;
 
-<script src="script.js"> 
-    document.write("Hello World :D")
+            let sure = confirm("Are your values " + AGE + ", " + maxAGE + ", and " + perDay + " correct?")
 
-</script>
+        if (sure == true) {
+            var totalRequired = (Number(perDay * 365)) * (Number(maxAGE) - Number(AGE))
+            result.innerHTML = "Result: you will need " + totalRequired + " cookies to last you until the ripe old age of " + maxAGE;
+        }
+
+        else {
+            alert("Run your code")
+        }
+
+
+        }
+    </script>
+
