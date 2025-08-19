@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+    <title style="font-family: 'Courier'">high low!</title>
+    <h2 style="font-family: 'Courier';"> Q1 3nd Graded Exercise submitted by Violet Castillo of 9-Beryllium!!</h2>
+   <!-- Enter your HTML tags below  but before the opening script tag -->
+
+   <p style="font-family: 'Courier'"> Guess the number : **** </p>
+   <p style="font-family: 'Courier'"> The number is from 1 to 100 </p>
+
+    <label for = "guess" style="font-family: 'Courier';"> 
+        Enter your guess :
+        <input type="text" style="font-family: 'Courier New';" id="guess">
+    </label>
+    <br>
+
+    <br>
+    <button onclick="checkIt()"> Check it! </button>
+     <p id="result" style="font-family: 'Courier';"> Result: </p>
+
+    <script>
+
+       var dNumber = Math.floor(Math.random() * 100) + 1; // generates a number from 1  to 100 when the page loads
+
+        function checkIt() {
+              var ans = document.getElementById("guess").value;
+
+            if (ans < dNumber) {
+                document.getElementById("result").innerHTML = "Result: Higher";
+            }
+            else if (ans > dNumber) {
+                document.getElementById("result").innerHTML = "Result: Lower";
+            }
+            else if (ans == dNumber) {
+                document.getElementById("result").innerHTML = "Result: You are correct!!";
+            }
+         
+        }
+    </script>
+
+</body>
+
+</html>
